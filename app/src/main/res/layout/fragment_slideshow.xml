@@ -1,0 +1,504 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fillViewport="true"
+    tools:context=".MainActivity">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <!--    guide lines  start    -->
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="20dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="20dp" />
+        <!-- guide lines end  -->
+        <!-- header section start-->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/headerCard"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="10dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/headingTitle"
+                    android:layout_marginLeft="10dp"
+                    android:text="Disease"
+                    android:textColor="@color/Green_1" />
+                <TextView
+                    android:id="@+id/headingCard"
+                    android:layout_below="@+id/headingTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="Apple Scab"
+                    android:layout_marginTop="4dp"
+                    android:textColor="@color/Yellow_1"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/headingCard"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:text="Fungus" />
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:layout_width="100dp"
+                    android:scaleType="centerCrop"
+                    android:layout_height="80dp"
+                    app:riv_corner_radius="15dp"
+                    android:src="@drawable/image_4"
+                    android:layout_marginRight="10dp"
+                    android:layout_alignParentRight="true"/>
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+        <!-- header sections end-->
+        <View
+            android:id="@+id/topLine"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="#9A000000"
+            app:layout_constraintEnd_toStartOf="@+id/guideline2"
+            app:layout_constraintStart_toStartOf="@+id/guideline1"
+            app:layout_constraintTop_toBottomOf="@+id/headerCard" />
+        <!-- description start-->
+        <RelativeLayout
+            android:id="@+id/descriptionSection"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toStartOf="@+id/guideline2"
+            app:layout_constraintStart_toStartOf="@+id/guideline1"
+            app:layout_constraintTop_toBottomOf="@+id/topLine">
+            <TextView
+                android:id="@+id/descriptionHeading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Description"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/descriptionContent"
+                android:letterSpacing="0.05"
+                android:lineHeight="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/desTemp"
+                android:layout_below="@+id/descriptionHeading"
+                android:layout_marginTop="8dp"/>
+        </RelativeLayout>
+        <!-- description end-->
+        <!-- symptoms start-->
+        <RelativeLayout
+            android:id="@+id/symptomsSection"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/descriptionSection"
+            android:background="@color/Green2_light"
+            android:layout_marginTop="24dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingTop="20dp"
+            android:paddingBottom="30dp">
+            <TextView
+                android:id="@+id/symptomsHeading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Symptoms"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/Green_1"/>
+            <LinearLayout
+                android:id="@+id/symptomsContent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_below="@+id/symptomsHeading"
+                android:layout_marginTop="8dp">
+                <TextView
+                    android:id="@+id/symptoms1"
+                    android:letterSpacing="0.05"
+                    android:lineHeight="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/desTemp"
+                    android:layout_marginTop="8dp"/>
+                <TextView
+                    android:id="@+id/symptoms2"
+                    android:letterSpacing="0.05"
+                    android:lineHeight="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/desTemp"
+                    android:layout_marginTop="8dp"/>
+                <TextView
+                    android:id="@+id/symptoms3"
+                    android:letterSpacing="0.05"
+                    android:lineHeight="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/desTemp"
+                    android:layout_marginTop="8dp"/>
+                <TextView
+                    android:id="@+id/symptoms4"
+                    android:letterSpacing="0.05"
+                    android:lineHeight="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/desTemp"
+                    android:layout_marginTop="8dp"/>
+            </LinearLayout>
+        </RelativeLayout>
+        <!-- symptoms end-->
+        <!--  Recommendation section start-->
+        <TextView
+            android:id="@+id/recommendationsHeading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Our Recommendations"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/Green_1"
+            app:layout_constraintEnd_toEndOf="@id/guideline2"
+            app:layout_constraintStart_toStartOf="@id/guideline1"
+            app:layout_constraintTop_toBottomOf="@+id/symptomsSection"/>
+
+        <androidx.cardview.widget.CardView
+            android:layout_marginTop="16dp"
+            android:id="@+id/recommandCard1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toStartOf="@id/guideline2"
+            app:layout_constraintStart_toEndOf="@id/guideline1"
+            app:layout_constraintTop_toBottomOf="@+id/recommendationsHeading">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/border"
+                android:paddingTop="16dp"
+                android:paddingBottom="16dp">
+
+                <TextView
+                    android:id="@+id/recommendCard1Heading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="Carbondazim 50% WP"
+                    android:textColor="@color/Green_1"
+                    android:textSize="20sp"/>
+
+                <TextView
+                    android:id="@+id/recommendCard1Description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/mybutton1"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/recomTemp"
+                    android:letterSpacing="0.05"
+                    android:lineHeight="20dp"/>
+
+                <android.widget.Button
+                    android:id="@+id/mybutton1"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5sp"
+                    android:paddingRight="16dp"
+                    android:paddingLeft="16dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/recommendCard1Heading"
+                    android:background="@drawable/buttonborder"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp"
+                    android:text="Fungicide"
+                    android:textSize="10sp"
+                    android:textColor="@color/white"/>
+                <android.widget.Button
+                    android:id="@+id/mybuttonBordered1"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5sp"
+                    android:paddingRight="16dp"
+                    android:paddingLeft="16dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/recommendCard1Description"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/borderedbutton"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp"
+                    android:text="More"
+                    android:textSize="10sp"
+                    android:textColor="@color/Green_1"
+                    android:layout_marginRight="16dp"/>
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:layout_marginTop="16dp"
+            android:id="@+id/recommandCard2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toStartOf="@id/guideline2"
+            app:layout_constraintStart_toEndOf="@id/guideline1"
+            app:layout_constraintTop_toBottomOf="@+id/recommandCard1">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/border"
+                android:paddingTop="16dp"
+                android:paddingBottom="16dp">
+
+                <TextView
+                    android:id="@+id/recommendCard1Heading2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="Hexaconoazole 5.0% EC"
+                    android:textColor="@color/Green_1"
+                    android:textSize="20sp"/>
+
+                <TextView
+                    android:id="@+id/recommendCard1Description2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/mybutton2"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:letterSpacing="0.05"
+                    android:lineHeight="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/recomTemp" />
+
+                <android.widget.Button
+                    android:id="@+id/mybutton2"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5sp"
+                    android:paddingRight="16dp"
+                    android:paddingLeft="16dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/recommendCard1Heading2"
+                    android:background="@drawable/buttonborder"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp"
+                    android:text="Fungicide"
+                    android:textSize="10sp"
+                    android:textColor="@color/white"/>
+                <android.widget.Button
+                    android:id="@+id/mybuttonBordered2"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5sp"
+                    android:paddingRight="16dp"
+                    android:paddingLeft="16dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/recommendCard1Description2"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/borderedbutton"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp"
+                    android:text="More"
+                    android:textSize="10sp"
+                    android:textColor="@color/Green_1"
+                    android:layout_marginRight="16dp"/>
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:layout_marginTop="16dp"
+            android:id="@+id/recommandCard3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toStartOf="@id/guideline2"
+            app:layout_constraintStart_toEndOf="@id/guideline1"
+            app:layout_constraintTop_toBottomOf="@+id/recommandCard2">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/border"
+                android:paddingTop="16dp"
+                android:paddingBottom="16dp">
+
+                <TextView
+                    android:id="@+id/recommendCard1Heading3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="Captan 50% WP"
+                    android:textColor="@color/Green_1"
+                    android:textSize="20sp"/>
+
+                <TextView
+                    android:id="@+id/recommendCard1Description3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/mybutton3"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginBottom="10dp"
+                    android:letterSpacing="0.05"
+                    android:lineHeight="20dp"
+                    android:text="@string/recomTemp" />
+
+                <android.widget.Button
+                    android:id="@+id/mybutton3"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5sp"
+                    android:paddingRight="16dp"
+                    android:paddingLeft="16dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/recommendCard1Heading3"
+                    android:background="@drawable/buttonborder"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp"
+                    android:text="Fungicide"
+                    android:textSize="10sp"
+                    android:textColor="@color/white"/>
+                <android.widget.Button
+                    android:id="@+id/mybuttonBordered3"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5sp"
+                    android:paddingRight="16dp"
+                    android:paddingLeft="16dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/recommendCard1Description3"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/borderedbutton"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp"
+                    android:text="More"
+                    android:textSize="10sp"
+                    android:textColor="@color/Green_1"
+                    android:layout_marginRight="16dp"/>
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+        <!--  Recommendation section end-->
+        <!-- NCSolutions start-->
+        <RelativeLayout
+            android:id="@+id/NCsolutionsSection"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/recommandCard3"
+            android:background="@color/Green2_light"
+            android:layout_marginTop="24dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingTop="20dp"
+            android:paddingBottom="30dp">
+            <TextView
+                android:id="@+id/NCsolutionsHeading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Nonchemical Solutions"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/Green_1"/>
+            <LinearLayout
+                android:id="@+id/NCsolutionsContent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_below="@+id/NCsolutionsHeading"
+                android:layout_marginTop="8dp">
+                <TextView
+                    android:id="@+id/NCsolution1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/NCStemp"
+                    android:letterSpacing="0.05"
+                    android:lineHeight="20dp"
+                    android:layout_marginTop="8dp"/>
+                <TextView
+                    android:id="@+id/NCsolution2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/desTemp"
+                    android:letterSpacing="0.05"
+                    android:lineHeight="20dp"
+                    android:layout_marginTop="8dp"/>
+                <TextView
+                    android:id="@+id/NCsolution3"
+                    android:layout_width="match_parent"
+                    android:letterSpacing="0.05"
+                    android:lineHeight="20dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/desTemp"
+                    android:layout_marginTop="8dp"/>
+            </LinearLayout>
+        </RelativeLayout>
+        <!-- NCsolutions end-->
+        <!-- Bottom Carousel start-->
+        <RelativeLayout
+            android:id="@+id/bottomSlider"
+            android:layout_marginTop="16dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toStartOf="@+id/guideline2"
+            app:layout_constraintHorizontal_bias="0.512"
+            app:layout_constraintStart_toStartOf="@+id/guideline1"
+            app:layout_constraintTop_toBottomOf="@+id/NCsolutionsSection">
+
+            <com.denzcoskun.imageslider.ImageSlider
+                android:id="@+id/image_slider"
+                android:layout_width="wrap_content"
+                android:layout_height="300dp"
+                app:iss_auto_cycle="true"
+                app:iss_delay="0"
+                app:iss_period="1000" />
+        </RelativeLayout>
+        <!--Bottom carousel end-->
+        <View
+            android:id="@+id/view160"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bottomSlider" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
+
+

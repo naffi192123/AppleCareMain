@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">AppleCare</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="desTemp">Apple scab is a common disease of plants in the rose family (Rosaceae) that is caused by the ascomycete fungus Venturia inaequalis.</string>
+    <string name="recomTemp">Hexaconazole is a broad-spectrum systemic triazole fungicide used for the control of many fungi</string>
+    <string name="NCStemp">Redesigning orchards so that cultivars with differential susceptibility can be treated with fungicides based on different schedules and using post-harvest treatments, such as leaf shredding or application of biological control agents. New knowledge of the resistance mechanisms in Malus may also present new management options.</string>
+    <string name="login">Login</string>
+    <string name="username">Username</string>
+    <string name="password">password</string>
+    <string name="signuphere">Signup here</string>
+</resources>
