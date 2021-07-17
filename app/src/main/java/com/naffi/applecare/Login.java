@@ -15,7 +15,7 @@ import android.widget.Toast;
 import com.google.android.material.textfield.TextInputEditText;
 import com.vishnusivadas.advanced_httpurlconnection.PutData;
 
-public class Login extends AppCompatActivity {
+public class Login  extends AppCompatActivity {
     TextView toMain;
     TextInputEditText textInputEditTextUsername,textInputEditTextPassword;
     Button buttonLogin;
