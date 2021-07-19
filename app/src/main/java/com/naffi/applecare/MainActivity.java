@@ -8,6 +8,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
+import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -18,9 +19,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.naffi.applecare.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
-
+    private MainActivityViewModel viewModel;
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityMainBinding binding;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +54,9 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
         NavigationUI.setupWithNavController(bottomNavigationView, navController);
+
+        viewModel = new ViewModelProvider(this).get(MainActivityViewModel.class);
+
     }
 
     @Override
