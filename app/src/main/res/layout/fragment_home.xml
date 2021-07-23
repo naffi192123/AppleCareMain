@@ -148,7 +148,7 @@
                     android:background="@color/Green_1"
                     android:padding="10dp">
                     <TextView
-                        android:id="@+id/headingCard"
+                        android:id="@+id/tv_diseaseName"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="My Card"
@@ -162,7 +162,7 @@
                         android:layout_height="wrap_content"
                         android:text="I have created this card view for learning purpose"
                         android:textColor="#ffff"
-                        android:layout_below="@+id/headingCard"
+                        android:layout_below="@+id/tv_diseaseName"
                         android:layout_marginTop="3dp"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"/>
@@ -208,7 +208,7 @@
             app:srcCompat="@drawable/dprocess" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/btn_takePicture"
 
             android:layout_width="0dp"
             android:layout_height="wrap_content"

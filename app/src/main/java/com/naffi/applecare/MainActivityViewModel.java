@@ -9,28 +9,47 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 import org.jetbrains.annotations.NotNull;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 public class MainActivityViewModel extends AndroidViewModel {
-    private Repository repository = new Repository();
+
+    private Repository repository;
+
     private MutableLiveData<Weather> myweather = new MutableLiveData<>();
 
-    private int user_id=1;
 
+    private final MutableLiveData<String> selectedItem = new MutableLiveData<String>();
 
+    public LiveData<String> getSelectedItem() {
+        return selectedItem;
+    }
 
     public MainActivityViewModel(@NonNull @NotNull Application application) {
         super(application);
-        myweather.postValue(repository.getWeather());
+        this.repository = new Repository(application.getApplicationContext());
+        repository.getString(new VolleyResponseListener() {
+            @Override
+            public void onError(String message) {
+//                Log.d("ahanger","inerror");
+            }
+
+            @Override
+            public void onResponse(JSONObject response) throws JSONException {
+                int id = response.getInt("id");
+                int temperature = response.getInt("temperature");
+                String location = response.getString("location");
+                String datetime=response.getString("dateTime");
+                String sunRise=response.getString("sunRiseTime");
+                String sunSet=response.getString("sunSetTime");
+                String weatherInfo=response.getString("weatherInfo");
+                Weather weather = new Weather(id,temperature,location,datetime,sunRise,sunSet,weatherInfo);
+                myweather.postValue(weather);
+            }
+        });
     }
-    public LiveData<Weather> getMyweather() {
+
+    public MutableLiveData<Weather> getMyweather() {
         return myweather;
-    }
-
-    public int getUser_id() {
-        return user_id;
-    }
-
-    public void setUser_id(int user_id) {
-        this.user_id = user_id;
     }
 }
